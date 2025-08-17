@@ -95,7 +95,7 @@ a:hover {
     text-decoration: underline;
 }
 .imagen-movible2{
-    width: 500px; /* Aumenta el ancho a 500px para que sea más grande */
+    width: 500px;
     transition: transform 0.5s ease, box-shadow 0.15s ease;
     border-radius: 10px;
     border: 2px solid #8a2b2b; /* Rojo vino para borde */
