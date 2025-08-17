@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas - Celulares Express</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quienes_somos.html">Quienes Somos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="preguntas.html">Preguntas</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <div class="texto">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Aquí respondemos las consultas más comunes sobre nuestros productos y servicios.</p>
+        <ul>
+            <li><strong>¿Cuáles son las opciones de pago?</strong> Aceptamos tarjetas de crédito, débito y transferencias bancarias.</li>
+            <li><strong>¿Ofrecen garantía en los celulares?</strong> Sí, todos incluyen una garantía de 12 meses contra defectos de fábrica.</li>
+            <li><strong>¿Cómo puedo rastrear mi pedido?</strong> Le enviaremos un enlace de seguimiento por correo electrónico.</li>
+        </ul>
+    </div>
+</body>
+</html>
+<!-- Sección de formulario de preguntas -->
+<div class="formulario">
+  <h2>Envíanos tu Pregunta</h2>
+  <label for="pregunta">Escribe tu consulta:</label><br>
+  <textarea id="pregunta" rows="5" cols="50" placeholder="Escribe tu pregunta aquí..."></textarea><br><br>
+  
+  <button onclick="borrarTexto('pregunta')">Borrar - Delete</button>
+  <button onclick="enviarTexto('pregunta')">Enviar - Send</button>
+</div>
+
+<hr>
+
+<!-- Sección de formulario de Gmail -->
+<div class="formulario">
+  <h2>Déjanos tu Gmail</h2>
+  <label for="correo">Correo electrónico:</label><br>
+  <input 
+    type="email" 
+    id="correo" 
+    placeholder="ejemplo@gmail.com"
+    pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
+    required
+  ><br><br>
+
+  <button onclick="borrarTexto('correo')">Borrar - Delete</button>
+  <button onclick="enviarTexto('correo')">Enviar - Send</button>
+</div>
+
+<script>
+  function borrarTexto(id) {
+    document.getElementById(id).value = "";
+  }
+
+  function enviarTexto(id) {
+    let valor = document.getElementById(id).value;
+    let regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    if (valor.trim() === "") {
+      alert("El campo está vacío, escribe algo antes de enviar.");
+    } else if (!regex.test(valor)) {
+      alert("Solo se permiten correos de Gmail (ejemplo@gmail.com).");
+    } else {
+      alert("Se ha enviado la información: " + valor);
+    }
+  }
+</script>
